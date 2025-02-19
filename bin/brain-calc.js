@@ -2,10 +2,6 @@ import greetUser from '../src/cli.js';
 import readlineSync from 'readline-sync';
 import getRandomNum from '../src/randomNums.js';
 
-
-const name = greetUser();
-let isNotRight = false;
-
 const isWrongCheck = (answer, userAnswer) => {
   if (parseInt(userAnswer) !== answer) {
     console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${answer}'.\nLet's try again, ${name}`);
@@ -41,6 +37,8 @@ const expression = () => {
   };
 };
 
+const name = greetUser();
+let isNotRight = false;
 console.log(`What is the result of the expression?`);
 for (let i = 0; i < 3; i += 1) {
   if (isNotRight === true) break;
