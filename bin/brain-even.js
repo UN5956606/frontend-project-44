@@ -10,7 +10,7 @@ const isEven = (num) => {
 const name = greetUser();
 console.log(`Answer "yes" if the number is even, otherwise answer "no".`);
 
-//костыль, не знаю как правильно закончить весь код досрочно.
+//для проверки успешности ответа
 let itDidWell = true;
 for (let i = 0; i < 3; i += 1) {
   const num = getRandomNum(100);

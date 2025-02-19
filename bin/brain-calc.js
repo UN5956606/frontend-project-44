@@ -1,14 +1,7 @@
 import greetUser from '../src/cli.js';
 import readlineSync from 'readline-sync';
 import getRandomNum from '../src/randomNums.js';
-
-const isWrongCheck = (answer, userAnswer) => {
-  if (parseInt(userAnswer) !== answer) {
-    console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${answer}'.\nLet's try again, ${name}`);
-    return true;
-  };
-  return false;
-};
+import isWrongCheck from '../src/answerCheck.js';
 
 const expression = () => {
   const rngExpressionType = getRandomNum(2);
@@ -21,17 +14,17 @@ const expression = () => {
       answer = randomNumOne + randomNumTwo;
       console.log(`Question: ${randomNumOne} + ${randomNumTwo}`);
       userAnswer = readlineSync.question(`Your answer: `);
-      return isNotRight = isWrongCheck(answer, userAnswer);
+      return isNotRight = isWrongCheck(answer, userAnswer, name);
     case 1:
       answer = randomNumOne * randomNumTwo;
       console.log(`Question: ${randomNumOne} * ${randomNumTwo}`);
       userAnswer = readlineSync.question(`Your answer: `);
-      return isNotRight = isWrongCheck(answer, userAnswer);
+      return isNotRight = isWrongCheck(answer, userAnswer, name);
     case 2:
       answer = randomNumOne - randomNumTwo;
       console.log(`Question: ${randomNumOne} - ${randomNumTwo}`);
       userAnswer = readlineSync.question(`Your answer: `);
-      return isNotRight = isWrongCheck(answer, userAnswer);
+      return isNotRight = isWrongCheck(answer, userAnswer, name);
     default:
       break;
   };
