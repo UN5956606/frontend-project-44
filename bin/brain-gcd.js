@@ -4,7 +4,8 @@ import getRandomNum from '../src/randomNums.js';
 import isWrongCheck from '../src/answerCheck.js';
 
 const answer = (randomNumberOne, randomNumberTwo) => {
-  if (randomNumberOne === 0 || randomNumberTwo === 0) return randomNumberOne === 0 ? randomNumberTwo : randomNumberTwo === 0 ? randomNumberOne : 0;
+  if (randomNumberOne === 0) return randomNumberTwo;
+  if (randomNumberTwo === 0) return randomNumberOne;
   return gcd(randomNumberOne, randomNumberTwo);
 };
 
@@ -26,7 +27,7 @@ for (let i = 0; i < 3; i += 1) {
   const randomNumberOne = getRandomNum(100);
   const randomNumberTwo = getRandomNum(100);
   console.log(`Question: ${randomNumberOne} ${randomNumberTwo}`);
-  const currectAnswer = answer(randomNumberOne, randomNumberTwo);
+  let currectAnswer = answer(randomNumberOne, randomNumberTwo);
   const userAnswer = readlineSync.question(`Your answer: `);
   isNotRight = isWrongCheck(currectAnswer, userAnswer, name);
   if (isNotRight === true ) break;
