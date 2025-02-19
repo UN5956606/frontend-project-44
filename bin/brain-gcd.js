@@ -4,13 +4,11 @@ import getRandomNum from '../src/randomNums.js';
 import isWrongCheck from '../src/answerCheck.js';
 
 const answer = (randomNumberOne, randomNumberTwo) => {
-  if (randomNumberOne === 0) return randomNumberTwo;
-  if (randomNumberTwo === 0) return randomNumberOne;
+  if (randomNumberOne === 0 || randomNumberTwo === 0) return randomNumberOne === 0 ? randomNumberTwo : randomNumberTwo === 0 ? randomNumberOne : 0;
   return gcd(randomNumberOne, randomNumberTwo);
 };
 
 const gcd = (num1, num2) => {
-  if (num1 === 0 || num2 === 0) return num1 === 0 ? num2 : num2 === 0 ? num1 : 0;
   while (num1 !== 0 && num2 !== 0) {
     if (num1 > num2) {
       num1 = num1 % num2;
