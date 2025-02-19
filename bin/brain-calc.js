@@ -7,10 +7,9 @@ const name = greetUser();
 let isNotRight = false;
 
 const isRight = (answer, userAnswer) => {
-  const toInt = parseInt(userAnswer);
   // решил приводить к int чтобы при написании буквы в консоль вместо NaN выводило букву
   // знаю что использует больше памяти из-за этого
-  if (toInt !== answer) {
+  if (parseInt(userAnswer) !== answer) {
     console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${answer}'.\nLet's try again, ${name}`);
     return false;
   };
