@@ -7,8 +7,6 @@ const name = greetUser();
 let isNotRight = false;
 
 const isRight = (answer, userAnswer) => {
-  // решил приводить к int чтобы при написании буквы в консоль вместо NaN выводило букву
-  // знаю что использует больше памяти из-за этого
   if (parseInt(userAnswer) !== answer) {
     console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${answer}'.\nLet's try again, ${name}`);
     return false;
@@ -20,7 +18,7 @@ const expression = () => {
   const rngExpressionType = getRandomNum(2);
   const randomNumOne = getRandomNum(25);
   const randomNumTwo = getRandomNum(10);
-  let userAnswer;
+  let userAnswer = 0;
   let answer = 0;
   switch (rngExpressionType) {
     case 0:
