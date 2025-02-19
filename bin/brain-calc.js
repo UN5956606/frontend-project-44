@@ -13,21 +13,20 @@ const expression = () => {
     case 0:
       answer = randomNumOne + randomNumTwo;
       console.log(`Question: ${randomNumOne} + ${randomNumTwo}`);
-      userAnswer = readlineSync.question(`Your answer: `);
-      return isNotRight = isWrongCheck(answer, userAnswer, name);
+      break;
     case 1:
       answer = randomNumOne * randomNumTwo;
       console.log(`Question: ${randomNumOne} * ${randomNumTwo}`);
-      userAnswer = readlineSync.question(`Your answer: `);
-      return isNotRight = isWrongCheck(answer, userAnswer, name);
+      break;
     case 2:
       answer = randomNumOne - randomNumTwo;
       console.log(`Question: ${randomNumOne} - ${randomNumTwo}`);
-      userAnswer = readlineSync.question(`Your answer: `);
-      return isNotRight = isWrongCheck(answer, userAnswer, name);
+      break;
     default:
       break;
   };
+  userAnswer = readlineSync.question(`Your answer: `);
+  return isNotRight = isWrongCheck(answer, userAnswer, name);
 };
 
 const name = greetUser();

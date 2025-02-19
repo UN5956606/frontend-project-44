@@ -27,7 +27,7 @@ for (let i = 0; i < 3; i += 1) {
   const randomNumberOne = getRandomNum(100);
   const randomNumberTwo = getRandomNum(100);
   console.log(`Question: ${randomNumberOne} ${randomNumberTwo}`);
-  let currectAnswer = answer(randomNumberOne, randomNumberTwo);
+  const currectAnswer = answer(randomNumberOne, randomNumberTwo);
   const userAnswer = readlineSync.question(`Your answer: `);
   isNotRight = isWrongCheck(currectAnswer, userAnswer, name);
   if (isNotRight === true ) break;
