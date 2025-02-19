@@ -37,6 +37,4 @@ for (let i = 0; i < 3; i += 1) {
   expression();
   if (isNotRight === true) break;
 };
-if (isNotRight === false) {
-  console.log(`Congratulations, ${name}`);
-};
+if (isNotRight === false) console.log(`Congratulations, ${name}`);
