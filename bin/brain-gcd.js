@@ -4,25 +4,31 @@ import getRandomNum from '../src/randomNums.js';
 import isWrongCheck from '../src/answerCheck.js';
 
 const answer = (randomNumberOne, randomNumberTwo) => {
-  if (randomNumberOne === 0 || randomNumberTwo === 0) return randomNumberOne === 0 ? randomNumberTwo : randomNumberTwo === 0 ? randomNumberOne : 0;
-  while (randomNumberOne !== 0 && randomNumberTwo !== 0) {
-    if (randomNumberOne > randomNumberTwo) {
-      randomNumberOne = randomNumberOne % randomNumberTwo;
+  if (randomNumberOne === 0) return randomNumberTwo;
+  if (randomNumberTwo === 0) return randomNumberOne;
+  return gcd(randomNumberOne, randomNumberTwo);
+};
+
+const gcd = (num1, num2) => {
+  if (num1 === 0 || num2 === 0) return num1 === 0 ? num2 : num2 === 0 ? num1 : 0;
+  while (num1 !== 0 && num2 !== 0) {
+    if (num1 > num2) {
+      num1 = num1 % num2;
     } else {
-      randomNumberTwo = randomNumberTwo % randomNumberOne;
+      num2 = num2 % num1;
     };
   };
-  return (randomNumberOne + randomNumberTwo)
+  return (num1 + num2);
 };
 
 const name = greetUser();
 let isNotRight = false;
 console.log('Find the greatest common divisor of given numbers.')
 for (let i = 0; i < 3; i += 1) {
-  let randomNumberOne = getRandomNum(100);
-  let randomNumberTwo = getRandomNum(100);
+  const randomNumberOne = getRandomNum(100);
+  const randomNumberTwo = getRandomNum(100);
   console.log(`Question: ${randomNumberOne} ${randomNumberTwo}`);
-  let currectAnswer = answer(randomNumberOne, randomNumberTwo);
+  const currectAnswer = answer(randomNumberOne, randomNumberTwo);
   const userAnswer = readlineSync.question(`Your answer: `);
   isNotRight = isWrongCheck(currectAnswer, userAnswer, name);
   if (isNotRight === true ) break;
