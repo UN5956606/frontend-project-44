@@ -6,13 +6,13 @@ import getRandomNum from '../src/randomNums.js';
 const name = greetUser();
 let isNotRight = false;
 
-const isRight = (answer, userAnswer) => {
+const isWrongCheck = (answer, userAnswer) => {
   if (parseInt(userAnswer) !== answer) {
     console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${answer}'.\nLet's try again, ${name}`);
-    return false;
+    return true;
   };
-  return true;
-}; // проверка верное ли число
+  return false;
+};
 
 const expression = () => {
   const rngExpressionType = getRandomNum(2);
@@ -25,30 +25,22 @@ const expression = () => {
       answer = randomNumOne + randomNumTwo;
       console.log(`Question: ${randomNumOne} + ${randomNumTwo}`);
       userAnswer = readlineSync.question(`Your answer: `);
-      if (isRight(answer, userAnswer) === false) {
-        return isNotRight = true;
-      };
-      break;
+      return isNotRight = isWrongCheck(answer, userAnswer);
     case 1:
       answer = randomNumOne * randomNumTwo;
       console.log(`Question: ${randomNumOne} * ${randomNumTwo}`);
       userAnswer = readlineSync.question(`Your answer: `);
-      if (isRight(answer, userAnswer) === false) {
-        return isNotRight = true;
-      };
-      break;
+      return isNotRight = isWrongCheck(answer, userAnswer);
     case 2:
       answer = randomNumOne - randomNumTwo;
       console.log(`Question: ${randomNumOne} - ${randomNumTwo}`);
       userAnswer = readlineSync.question(`Your answer: `);
-      if (isRight(answer, userAnswer) === false) {
-        return isNotRight = true;
-      };
-      break;
+      return isNotRight = isWrongCheck(answer, userAnswer);
     default:
       break;
   };
 };
+
 console.log(`What is the result of the expression?`);
 for (let i = 0; i < 3; i += 1) {
   if (isNotRight === true) break;
