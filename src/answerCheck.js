@@ -3,6 +3,7 @@ const isWrongCheck = (answer, userAnswer, name) => {
     console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${answer}'.\nLet's try again, ${name}`);
     return true;
   };
+  console.log('Correct!');
   return false;
 };
 
