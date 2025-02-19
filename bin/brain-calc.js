@@ -36,6 +36,7 @@ console.log(`What is the result of the expression?`);
 for (let i = 0; i < 3; i += 1) {
   if (isNotRight === true) break;
   expression();
+  console.log('Correct!');
 };
 if (isNotRight === false) {
   console.log(`Congratulations, ${name}`);
