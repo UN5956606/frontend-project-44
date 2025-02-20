@@ -1,5 +1,4 @@
 import greetUser from '../src/cli.js';
-import readlineSync from 'readline-sync';
 import getRandomNum from '../src/randomNums.js';
 import isWrongCheck from '../src/answerCheck.js';
 
