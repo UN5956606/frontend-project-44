@@ -1,5 +1,4 @@
 import greetUser from '../src/cli.js';
-import readlineSync from 'readline-sync';
 import getRandomNum from '../src/randomNums.js';
 import isWrongCheck from '../src/answerCheck.js';
 
@@ -17,8 +16,7 @@ for (let i = 0; i < 3; i += 1) {
   const num = getRandomNum(100);
   const correctAnswer = isEven(num);
   console.log(`Is ${num} even? `);
-  const userAnswer = readlineSync.question(`Your answer: `);
-  isWrong = isWrongCheck(correctAnswer, userAnswer, name);
+  isWrong = isWrongCheck(correctAnswer, name);
   if (isWrong === true) break;
 };
 if (isWrong === false) {

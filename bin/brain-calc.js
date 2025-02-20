@@ -1,5 +1,4 @@
 import greetUser from '../src/cli.js';
-import readlineSync from 'readline-sync';
 import getRandomNum from '../src/randomNums.js';
 import isWrongCheck from '../src/answerCheck.js';
 
@@ -7,7 +6,6 @@ const expression = () => {
   const rngExpressionType = getRandomNum(2);
   const randomNumOne = getRandomNum(25);
   const randomNumTwo = getRandomNum(10);
-  let userAnswer = 0;
   let answer = 0;
   switch (rngExpressionType) {
     case 0:
@@ -25,8 +23,7 @@ const expression = () => {
     default:
       break;
   };
-  userAnswer = readlineSync.question(`Your answer: `);
-  return isNotRight = isWrongCheck(answer, userAnswer, name);
+  return isNotRight = isWrongCheck(answer, name);
 };
 
 const name = greetUser();
