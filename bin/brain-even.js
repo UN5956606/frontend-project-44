@@ -1,6 +1,7 @@
 import greetUser from '../src/cli.js';
 import readlineSync from 'readline-sync';
 import getRandomNum from '../src/randomNums.js';
+import isWrongCheck from '../src/answerCheck.js';
 
 const isEven = (num) => {
   if (num % 2 === 0 & num !== 0) return 'yes';
@@ -11,19 +12,15 @@ const name = greetUser();
 console.log(`Answer "yes" if the number is even, otherwise answer "no".`);
 
 //для проверки успешности ответа
-let itDidWell = true;
+let isWrong = false;
 for (let i = 0; i < 3; i += 1) {
   const num = getRandomNum(100);
   const correctAnswer = isEven(num);
   console.log(`Is ${num} even? `);
   const userAnswer = readlineSync.question(`Your answer: `);
-  if (userAnswer !== correctAnswer) {
-    console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}`);
-    itDidWell = false;
-    break;
-  };
-  console.log('Correct!');
+  isWrong = isWrongCheck(correctAnswer, userAnswer, name);
+  if (isWrong === true) break;
 };
-if (itDidWell === true) {
+if (isWrong === false) {
   console.log(`Congratulations, ${name}`);
 };
