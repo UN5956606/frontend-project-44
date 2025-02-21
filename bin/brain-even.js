@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import greetUser from '../src/cli.js';
 import getRandomNum from '../src/randomNums.js';
 import isWrongCheck from '../src/answerCheck.js';
