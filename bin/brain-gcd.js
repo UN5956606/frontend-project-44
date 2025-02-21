@@ -16,8 +16,8 @@ const gcd = (num1, num2) => {
       num1 = num1 % num2;
     } else {
       num2 = num2 % num1;
-    };
-  };
+    }
+  }
   return (num1 + num2);
 };
 
@@ -31,5 +31,5 @@ for (let i = 0; i < 3; i += 1) {
   const currectAnswer = answer(randomNumberOne, randomNumberTwo);
   isNotRight = isWrongCheck(currectAnswer, name);
   if (isNotRight === true ) break;
-};
+}
 if (isNotRight === false) console.log(`Congratulations, ${name}`);

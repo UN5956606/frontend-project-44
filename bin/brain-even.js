@@ -20,7 +20,7 @@ for (let i = 0; i < 3; i += 1) {
   console.log(`Is ${num} even? `);
   isWrong = isWrongCheck(correctAnswer, name);
   if (isWrong === true) break;
-};
+}
 if (isWrong === false) {
   console.log(`Congratulations, ${name}`);
-};
+}

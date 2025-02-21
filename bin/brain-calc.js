@@ -24,7 +24,7 @@ const expression = () => {
       break;
     default:
       break;
-  };
+  }
   return isNotRight = isWrongCheck(answer, name);
 };
 
@@ -34,5 +34,5 @@ console.log(`What is the result of the expression?`);
 for (let i = 0; i < 3; i += 1) {
   expression();
   if (isNotRight === true) break;
-};
+}
 if (isNotRight === false) console.log(`Congratulations, ${name}`);
