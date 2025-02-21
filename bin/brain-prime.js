@@ -7,18 +7,16 @@ import isWrongCheck from '../src/answerCheck.js';
 const questionGeneration = () => {
   const randomNumber = getRandomNum(100, 1);
   let answer = 'yes';
-  if (randomNumber < 2) {
+  if (randomNumber < 2 || randomNumber % 2 === 0) {
     answer = 'no';
-  }
-  if (randomNumber === 2 || randomNumber === 3) {
+  } else if (randomNumber === 2 || randomNumber === 3) {
     answer = 'yes';
-  }
-  if (randomNumber % 2 === 0) {
-    answer = 'no';
-  }
-  for (let j = 3; j <= Math.sqrt(randomNumber); j += 2) {
-    if (randomNumber % j === 0) {
-      answer = 'no';
+  } else {
+    for (let j = 3; j <= Math.sqrt(randomNumber); j += 2) {
+      if (randomNumber % j === 0) {
+        answer = 'no';
+        break;
+      }
     }
   }
   console.log(`Question: ${randomNumber}`);
