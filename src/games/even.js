@@ -12,7 +12,7 @@ const even = () => {
   const gameQuestionGenerator = () => {
     const num = getRandomNum(100);
     const correctAnswer = isEven(num);
-    const expression = `Is ${num} even? `;
+    const expression = `Question: ${num}`;
     return [correctAnswer, expression];
   };
   defaultLogic(gameQuestionGenerator, question);
