@@ -1,5 +1,5 @@
-import greetUser from '../src/cli.js';
-import isWrongCheck from '../src/answerCheck.js';
+import greetUser from './cli.js';
+import isWrongCheck from './answerCheck.js';
 
 const defaultLogic = (game, question) => {
   const name = greetUser();
