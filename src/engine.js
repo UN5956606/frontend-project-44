@@ -11,7 +11,7 @@ const defaultLogic = (game, question) => {
     isNotRight = isWrongCheck(asnwerAndQuestion, name);
     if (isNotRight === true) break;
   }
-  if (isNotRight === false) console.log(`Congratulations, ${name}`);
+  if (isNotRight === false) console.log(`Congratulations, ${name}!`);
 };
 
 export default defaultLogic;
