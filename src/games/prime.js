@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import getRandomNum from '../src/randomNums.js';
-import defaultLogic from '../src/engine.js';
+import getRandomNum from '../randomNums.js';
+import defaultLogic from '../engine.js';
 
 const prime = () => {
   const gameQuestionGenerator = () => {
