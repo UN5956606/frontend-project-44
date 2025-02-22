@@ -15,7 +15,8 @@ const progression = () => {
     const skippedNumInArray = getRandomNum(array.length, 0);
     const answer = array[skippedNumInArray];
     array[skippedNumInArray] = `..`;
-    const expression = array.toString().split(',').join(" ");
+    const arrayToString = array.toString().split(',').join(" ");
+    const expression = `Question: ${arrayToString}`;
     return [answer, expression]
   };
 
