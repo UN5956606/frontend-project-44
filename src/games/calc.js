@@ -6,12 +6,11 @@ import defaultLogic from '../engine.js';
 
 const calc = () => {
   const expressionGenerator = () => {
-    const rngExpressionType = getRandomNum(2);
+    const rngExpressionType = getRandomNum(2); // выбор типа выражения 0-2 (+*-)
     const randomNumOne = getRandomNum(25);
     const randomNumTwo = getRandomNum(10);
     let answer = 0;
     let question = '';
-    // число от 0-2 (rngExpressionType) выбирают тип выражения (+ * -)
     switch (rngExpressionType) {
       case 0:
         answer = randomNumOne + randomNumTwo;
