@@ -7,25 +7,27 @@ import defaultLogic from '../engine.js';
 const calc = () => {
   const expressionGenerator = () => {
     const rngExpressionType = getRandomNum(2); // выбор типа выражения 0-2 (+*-)
-    const randomNumbers = [getRandomNum(25), getRandomNum(10)];
-    const asnAndQue = [];
+    const randomNumOne = getRandomNum(25);
+    const randomNumTwo = getRandomNum(10);
+    let answer = 0;
+    let question = '';
     switch (rngExpressionType) {
       case 0:
-        asnAndQue[0] = randomNumbers[0] + randomNumbers[1];
-        asnAndQue[1] = `Question: ${randomNumbers[0]} + ${randomNumbers[1]}`;
+        answer = randomNumOne + randomNumTwo;
+        question = `Question: ${randomNumOne} + ${randomNumTwo}`;
         break;
       case 1:
-        asnAndQue[0] = randomNumbers[0] * randomNumbers[1];
-        asnAndQue[1] = `Question: ${randomNumbers[0]} * ${randomNumbers[1]}`;
+        answer = randomNumOne * randomNumTwo;
+        question = `Question: ${randomNumOne} * ${randomNumTwo}`;
         break;
       case 2:
-        asnAndQue[0] = randomNumbers[0] - randomNumbers[1];
-        asnAndQue[1] = (`Question: ${randomNumbers[0]} - ${randomNumbers[1]}`);
+        answer = randomNumOne - randomNumTwo;
+        question = (`Question: ${randomNumOne} - ${randomNumTwo}`);
         break;
       default:
         break;
     }
-    return asnAndQue;
+    return [answer, question];
   };
   const question = 'What is the result of the expression?';
   defaultLogic(expressionGenerator, question);
