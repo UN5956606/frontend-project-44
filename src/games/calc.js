@@ -7,7 +7,7 @@ import defaultLogic from '../engine.js';
 const calc = () => {
   const expressionGenerator = () => {
     const rngExpressionType = getRandomNum(2); // выбор типа выражения 0-2 (+*-)
-    const randomNumbers = [getRandomNum(25), getRandomNum(10)]
+    const randomNumbers = [getRandomNum(25), getRandomNum(10)];
     let answer = 0;
     let question = '';
     switch (rngExpressionType) {
@@ -26,7 +26,7 @@ const calc = () => {
       default:
         break;
     }
-  return [answer, question];
+    return [answer, question];
   };
   const question = 'What is the result of the expression?';
   defaultLogic(expressionGenerator, question);
