@@ -9,7 +9,7 @@ const gcd = () => {
       if (x > y) {
         x %= y;
       } else {
-        x %= y;
+        y %= x;
       }
     }
     return (x + y);
