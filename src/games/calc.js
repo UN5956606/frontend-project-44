@@ -16,15 +16,13 @@ const calc = () => {
         answer = randomNumOne + randomNumTwo;
         question = `Question: ${randomNumOne} + ${randomNumTwo}`;
         break;
-      case 1:
-        answer = randomNumOne * randomNumTwo;
-        question = `Question: ${randomNumOne} * ${randomNumTwo}`;
-        break;
       case 2:
         answer = randomNumOne - randomNumTwo;
         question = (`Question: ${randomNumOne} - ${randomNumTwo}`);
         break;
       default:
+        answer = randomNumOne * randomNumTwo;
+        question = `Question: ${randomNumOne} * ${randomNumTwo}`;
         break;
     }
     return [answer, question];
