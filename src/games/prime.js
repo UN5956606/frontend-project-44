@@ -5,7 +5,7 @@ import defaultLogic from '../engine.js';
 
 const prime = () => {
   const gameQuestionGenerator = () => {
-    const randomNumber = getRandomNum(4, 1);
+    const randomNumber = getRandomNum(100, 1);
     let answer = 'yes';
     if (randomNumber < 2) {
       answer = 'no';
