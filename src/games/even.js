@@ -8,7 +8,7 @@ const even = () => {
     if (num % 2 === 0) return 'yes';
     return 'no';
   };
-  const question = `Answer "yes" if the number is even, otherwise answer "no".`;
+  const question = 'Answer "yes" if the number is even, otherwise answer "no".';
   const gameQuestionGenerator = () => {
     const num = getRandomNum(512);
     const correctAnswer = isEven(num);
