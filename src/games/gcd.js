@@ -4,15 +4,15 @@ import getRandomNum from '../randomNums.js';
 import defaultLogic from '../engine.js';
 
 const gcd = () => {
-  const whatGcdOf = (num1, num2) => {
-    while (num1 !== 0 && num2 !== 0) {
-      if (num1 > num2) {
-        num1 %= num2;
+  const whatGcdOf = (x, y) => {
+    while (x !== 0 && y !== 0) {
+      if (x > y) {
+        x %= y;
       } else {
-        num2 %= num1;
+        x %= y;
       }
     }
-    return (num1 + num2);
+    return (x + y);
   };
   const answer = (randomNumberOne, randomNumberTwo) => {
     if (randomNumberOne === 0) return randomNumberTwo;
