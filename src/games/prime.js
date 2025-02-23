@@ -21,7 +21,7 @@ const prime = () => {
           break;
         }
       }
-    } 
+    }
     const expression = `Question: ${randomNumber}`;
     return [answer, expression];
   };
