@@ -4,7 +4,9 @@ import getRandomNum from '../randomNums.js';
 import defaultLogic from '../engine.js';
 
 const gcd = () => {
-  const whatGcdOf = (x, y) => {
+  const whatGcdOf = (num1, num2) => {
+    let num1 = x;
+    let num2 = y;
     while (x !== 0 && y !== 0) {
       if (x > y) {
         x %= y;
