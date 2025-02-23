@@ -5,16 +5,15 @@ import defaultLogic from '../engine.js';
 
 const gcd = () => {
   const whatGcdOf = (num1, num2) => {
-    let x = num1;
-    let y = num2;
-    while (x !== 0 && y !== 0) {
-      if (x > y) {
-        x %= y;
+    let numbers = [num1, num2];
+    while (numbers[0] !== 0 && numbers[1] !== 0) {
+      if (numbers[0] > numbers[1]) {
+        numbers[0] %= numbers[1];
       } else {
-        y %= x;
+        numbers[1] %= numbers[0];
       }
     }
-    return (x + y);
+    return (numbers[0] + numbers[1]);
   };
   const answer = (randomNumberOne, randomNumberTwo) => {
     if (randomNumberOne === 0) return randomNumberTwo;
