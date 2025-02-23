@@ -5,8 +5,8 @@ import defaultLogic from '../engine.js';
 
 const gcd = () => {
   const whatGcdOf = (num1, num2) => {
-    let num1 = x;
-    let num2 = y;
+    let x = num1;
+    let y = num2;
     while (x !== 0 && y !== 0) {
       if (x > y) {
         x %= y;
