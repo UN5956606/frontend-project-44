@@ -11,13 +11,13 @@ const progression = () => {
     for (let i = 1; i < getRandomNum(16, 6); i += 1) {
       startNum += progressionNumber;
       array.push(startNum + progressionNumber);
-    };
+    }
     const skippedNumInArray = getRandomNum(array.length, 0);
     const answer = array[skippedNumInArray];
     array[skippedNumInArray] = '..';
     const arrayToString = array.toString().split(',').join(" ");
     const expression = 'Question: ${arrayToString}';
-    return [answer, expression]
+    return [answer, expression];
   };
 
   const question = 'What number is missing in the progression?';
