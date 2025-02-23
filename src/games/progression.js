@@ -16,7 +16,7 @@ const progression = () => {
     const answer = array[skippedNumInArray];
     array[skippedNumInArray] = '..';
     const arrayToString = array.toString().split(',').join(" ");
-    const expression = 'Question: ${arrayToString}';
+    const expression = `Question: ${arrayToString}`;
     return [answer, expression];
   };
 
