@@ -10,7 +10,6 @@ const prime = () => {
     if (randomNumber < 2) {
       answer = 'no';
     }
-    
     if (randomNumber === 2 || randomNumber === 3) {
       answer = 'yes';
     } else if (randomNumber % 2 === 0) {
@@ -26,7 +25,6 @@ const prime = () => {
     const expression = `Question: ${randomNumber}`;
     return [answer, expression];
   };
-
   const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   defaultLogic(gameQuestionGenerator, question);
 };
